@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <section className="flex items-center justify-center h-screen bg-gradient-to-r from-green-400 to-blue-500 text-white text-center">
