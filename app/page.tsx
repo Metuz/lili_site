@@ -5,7 +5,7 @@ export default function Home() {
             <h1 className="text-5xl font-bold mb-4">Proximamente!</h1>
             <p className="text-lg mb-6">Estamos trabajando duro para ofrecerte algo especial. ¡No te lo pierdas!</p>
             <div className="flex justify-center mb-6">
-                <input type="email" placeholder="Ingresa tu correo" className="p-2 w-64 rounded-l-lg focus:outline-none" required />
+                <input type="email" placeholder="Ingresa tu correo" className="p-2 w-64 border-2 rounded-l-lg focus:outline-none" required />
                 <button type="submit" className="bg-white text-green-600 font-semibold py-2 px-4 rounded-r-lg hover:bg-gray-100 transition duration-300">
                     Notificarme
                 </button>
