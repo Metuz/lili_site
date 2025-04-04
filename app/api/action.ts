@@ -8,7 +8,7 @@ const emailSchema = z.object({
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function sendEmail(prevState: any, formData: FormData) {
+export async function sendEmail(prevState: any, formData: FormData) { // eslint-disable-line @typescript-eslint/no-explicit-any
   const contactFormData = Object.fromEntries(formData)
   const validateContactFormData = emailSchema.safeParse(contactFormData)
 
@@ -23,7 +23,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
   }
 
   try {
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'El fin del principio <onboarding@resend.dev>',
       to: ['lic.lilia.psicologa@gmail.com'],
       subject: 'Persona interesada',
@@ -31,7 +31,6 @@ export async function sendEmail(prevState: any, formData: FormData) {
     });
 
     if (error) {
-      console.log(error)
       return {
         errors: {
           email: "No pudimos agregarte"
@@ -43,6 +42,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
       success: "Esperanos pronto",
     };
   } catch (error) {
+    console.log(error);
     return {
       errors: {
         email: "No pudimos agregarte"
