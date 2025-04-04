@@ -7,7 +7,6 @@ const emailSchema = z.object({
 });
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const email = process.env.EMAIL;
 
 export async function sendEmail(prevState: any, formData: FormData) {
   const contactFormData = Object.fromEntries(formData)
@@ -26,7 +25,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
   try {
     const { data, error } = await resend.emails.send({
       from: 'El fin del principio <onboarding@resend.dev>',
-      to: ['alejandroohr@gmail.com'],
+      to: ['lic.lilia.psicologa@gmail.com'],
       subject: 'Persona interesada',
       html: validateContactFormData.data.email
     });
