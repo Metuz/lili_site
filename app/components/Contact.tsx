@@ -27,7 +27,7 @@ export default function Contact() {
               <label htmlFor="message" className="block mb-1 font-medium">Mensaje</label>
               <textarea 
                 id="message" 
-                rows="4" 
+                rows={4}
                 className="w-full p-3 rounded bg-white/80 border border-[#80a06e] focus:outline-none focus:ring-2 focus:ring-[#66332f]"
                 placeholder="Como podemos ayudarte?"
               ></textarea>
