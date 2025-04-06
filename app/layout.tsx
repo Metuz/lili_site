@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "El fin del principio",
-  description: "Psicología",
+  title: "Terepia el fin | Terapia Psicologica Profesional",
+  description: "Servicios profesionales de psicología para ayudarle a lograr el bienestar mental.",
 };
 
 export default function RootLayout({
@@ -24,10 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="min-h-screen bg-[#f9f9f9] text-[#333]">
+          {children}
+        </div>
       </body>
     </html>
   );
