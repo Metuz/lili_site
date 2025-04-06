@@ -1,9 +1,19 @@
-import NotifyForm from "./components/NotifyForm";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Theraphy from "./components/Theraphy";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
+import Blog from "./components/Blog";
 
 export default function Home() {
   return (
     <>
-      <NotifyForm />
+      <Navbar />
+      <Hero />
+      <Theraphy />
+      <Blog />
+      <Contact />
+      <Footer />
     </>
   );
 }
