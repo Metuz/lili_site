@@ -1,7 +1,7 @@
 "use server";
 import { z } from "zod";
-import nodemailer from 'nodemailer';
 
+const nodemailer = require("nodemailer"); // eslint-disable-line @typescript-eslint/no-require-imports
 const emailSchema = z.object({
   name: z.string().min(2, { message: "Tu nombre debe conterner al menos 2 letras" }),
   email: z.string().email({ message: "Correo invalido"}),
