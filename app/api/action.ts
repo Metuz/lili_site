@@ -1,12 +1,22 @@
 "use server";
 import { z } from "zod";
-import { Resend } from "resend";
 
+const nodemailer = require('nodemailer');
 const emailSchema = z.object({
-  email: z.string().email({ message: "Correo invalido"})
+  name: z.string().min(2, { message: "Tu nombre debe conterner al menos 2 letras" }),
+  email: z.string().email({ message: "Correo invalido"}),
+  message: z.string().min(10, { message: "Mensaje debe contener al mentos 10 letras" })
 });
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: process.env.IONOS_SMTP_HOST,
+  port: process.env.IONOS_SMTP_PORT,
+  secure: false,
+  auth: {
+    user: process.env.IONOS_USER,
+    pass: process.env.IONOS_PASSWORD
+  }
+})
 
 export async function sendEmail(prevState: any, formData: FormData) { // eslint-disable-line @typescript-eslint/no-explicit-any
   const contactFormData = Object.fromEntries(formData)
@@ -17,36 +27,29 @@ export async function sendEmail(prevState: any, formData: FormData) { // eslint-
 
     return {
       errors: {
-        email: formFieldErrors?.email
+        name: formFieldErrors?.name,
+        email: formFieldErrors?.email,
+        message: formFieldErrors?.message
       },
     };
   }
 
   try {
-    const { error } = await resend.emails.send({
-      from: 'El fin del principio <onboarding@resend.dev>',
-      to: ['lic.lilia.psicologa@gmail.com'],
-      subject: 'Persona interesada',
-      html: validateContactFormData.data.email
-    });
-
-    if (error) {
-      return {
-        errors: {
-          email: "No pudimos agregarte"
-        }
-      }
-    }
-
-    return {
-      success: "Esperanos pronto",
-    };
-  } catch (error) {
-    console.log(error);
+    const isVerified = await transporter.verify()
+  } catch ( error ) {
     return {
       errors: {
         email: "No pudimos agregarte"
-      }
+      },
     }
   }
+  const info = await transporter.sendMail({
+    from: 'Terapia el fin <contacto@terapiaelfin.com>',
+    to: process.env.EMAIL,
+    subject: `Mensaje enviado por ${validateContactFormData.data.name}`,
+    text: `${validateContactFormData.data.message} ${validateContactFormData.data.email}`
+  });
+  return {
+    success: "Esperanos pronto",
+  };
 }

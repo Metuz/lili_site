@@ -1,15 +1,46 @@
+"use client"
+
+import { useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { sendEmail } from "../api/action";
+
+const initialState = {
+  message: "",
+  errors: {
+    name: "",
+    email: "",
+    message: ""
+  }
+};
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button 
+      type="submit"
+      disabled={pending ? true : false}
+      className="w-full bg-[#66332f] hover:bg-[#4a2522] text-white font-bold py-3 px-6 rounded transition duration-300 shadow-md"
+    >
+      Enviar
+    </button>
+  )
+}
+
 export default function Contact() {
+  const [state, formAction] = useActionState(sendEmail, initialState)
+
   return (
     <section id="contact" className="py-16 px-4 bg-[#95dcc6] text-[#66332f]">
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-8 text-center">Contactanos</h2>
         <div className="max-w-2xl mx-auto">
-          <form className="space-y-6">
+          <form action={formAction} className="space-y-6">
             <div>
               <label htmlFor="name" className="block mb-1 font-medium">Nombre</label>
               <input 
                 type="text" 
-                id="name" 
+                name="name" 
                 className="w-full p-3 rounded bg-white/80 border border-[#80a06e] focus:outline-none focus:ring-2 focus:ring-[#66332f]"
                 placeholder="Tu nombre"
               />
@@ -18,7 +49,7 @@ export default function Contact() {
               <label htmlFor="email" className="block mb-1 font-medium">Email</label>
               <input 
                 type="email" 
-                id="email" 
+                name="email" 
                 className="w-full p-3 rounded bg-white/80 border border-[#80a06e] focus:outline-none focus:ring-2 focus:ring-[#66332f]"
                 placeholder="tu.email@example.com"
               />
@@ -26,18 +57,13 @@ export default function Contact() {
             <div>
               <label htmlFor="message" className="block mb-1 font-medium">Mensaje</label>
               <textarea 
-                id="message" 
+                name="message" 
                 rows={4}
                 className="w-full p-3 rounded bg-white/80 border border-[#80a06e] focus:outline-none focus:ring-2 focus:ring-[#66332f]"
                 placeholder="Como podemos ayudarte?"
               ></textarea>
             </div>
-            <button 
-              type="submit" 
-              className="w-full bg-[#66332f] hover:bg-[#4a2522] text-white font-bold py-3 px-6 rounded transition duration-300 shadow-md"
-            >
-              Enviar
-            </button>
+            <SubmitButton />
           </form>
           <div className="mt-12 text-center">
             <h3 className="text-xl font-semibold mb-4">Visita nuestro consultorio</h3>
