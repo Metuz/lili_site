@@ -28,7 +28,7 @@ function SubmitButton() {
 }
 
 export default function Contact() {
-  const [state, formAction] = useActionState(sendEmail, initialState)
+  const [state, formAction] = useActionState(sendEmail, initialState);
 
   return (
     <section id="contact" className="py-16 px-4 bg-[#95dcc6] text-[#66332f]">
