@@ -53,6 +53,9 @@ export default function Contact() {
                 className="w-full p-3 rounded bg-white/80 border border-[#80a06e] focus:outline-none focus:ring-2 focus:ring-[#66332f]"
                 placeholder="tu.email@example.com"
               />
+              {state.errors?.email && (
+                <p className="text-red-500">{state.errors.email}</p>
+              )}
             </div>
             <div>
               <label htmlFor="message" className="block mb-1 font-medium">Mensaje</label>

@@ -1,7 +1,7 @@
 "use server";
 import { z } from "zod";
+import nodemailer from 'nodemailer';
 
-const nodemailer = require('nodemailer');
 const emailSchema = z.object({
   name: z.string().min(2, { message: "Tu nombre debe conterner al menos 2 letras" }),
   email: z.string().email({ message: "Correo invalido"}),
@@ -35,15 +35,16 @@ export async function sendEmail(prevState: any, formData: FormData) { // eslint-
   }
 
   try {
-    const isVerified = await transporter.verify()
+    await transporter.verify()
   } catch ( error ) {
+    console.log(error);
     return {
       errors: {
         email: "No pudimos agregarte"
       },
     }
   }
-  const info = await transporter.sendMail({
+  await transporter.sendMail({
     from: 'Terapia el fin <contacto@terapiaelfin.com>',
     to: process.env.EMAIL,
     subject: `Mensaje enviado por ${validateContactFormData.data.name}`,
