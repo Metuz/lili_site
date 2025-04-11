@@ -5,7 +5,7 @@ import { useActionState } from "react";
 import { sendEmail } from "../api/action";
 
 const initialState = {
-  message: "",
+  success: "",
   errors: {
     name: "",
     email: "",
@@ -68,6 +68,7 @@ export default function Contact() {
             </div>
             <SubmitButton />
           </form>
+          {state?.success && <p>{state.success}</p>}
           <div className="mt-12 text-center">
             <h3 className="text-xl font-semibold mb-4">Visita nuestro consultorio</h3>
             <p className="mb-2">123 Wellness Avenue</p>
