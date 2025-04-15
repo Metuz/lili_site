@@ -6,7 +6,7 @@ import Image from 'next/image';
 const blogPosts = [
   {
     id: 1,
-    title: "Understanding Anxiety Disorders",
+    title: "El manejo de la ansiedad",
     excerpt: "Learn to recognize symptoms and evidence-based coping strategies for anxiety management.",
     category: "Mental Health",
     date: "May 15, 2023",
@@ -15,7 +15,7 @@ const blogPosts = [
   },
   {
     id: 2,
-    title: "The Power of Mindfulness Meditation",
+    title: "Cómo mejorar la relación de pareja",
     excerpt: "How daily mindfulness practice can rewire your brain for reduced stress and improved focus.",
     category: "Mindfulness",
     date: "June 2, 2023",
@@ -24,7 +24,7 @@ const blogPosts = [
   },
   {
     id: 3,
-    title: "Building Healthier Relationships",
+    title: "Consejos para trabajar la depresión",
     excerpt: "Professional techniques for improving communication and emotional connection.",
     category: "Relationships",
     date: "June 18, 2023",
