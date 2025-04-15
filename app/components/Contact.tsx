@@ -9,7 +9,7 @@ const initialState = {
   errors: {
     name: "",
     email: "",
-    message: ""
+    message: "",
   }
 };
 
