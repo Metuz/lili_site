@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "form-data": "^4.0.2",
+    "framer-motion": "^12.7.3",
     "next": "15.2.4",
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
