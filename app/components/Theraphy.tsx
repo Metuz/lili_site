@@ -11,7 +11,13 @@ export default function Theraphy() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-[#66332f]">Terapia Individual</h3>
-            <p className="text-gray-600">One-on-one sessions tailored to your personal challenges and goals.</p>
+            <p className="text-gray-600">
+              Un espacio terapéutico individual donde podrás explorar tu mundo interno con libertad,
+              comprender tu historia personal y trabajar en los desafíos emocionales que enfrentas.
+              Cada sesión está pensada para acompañarte en tus procesos vitales, con respeto, escucha
+              profunda y sin juicios. Se busca favorecer la reflexión, el autoconocimiento y la construcción
+              de nuevas formas de estar contigo y con los demás.
+            </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#80a06e]">
             <div className="w-12 h-12 bg-[#80a06e] rounded-full flex items-center justify-center mb-4">
@@ -20,7 +26,13 @@ export default function Theraphy() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-[#66332f]">Terapia de Pereja</h3>
-            <p className="text-gray-600">Improve communication and strengthen your relationship.</p>
+            <p className="text-gray-600">
+              Acompañamiento profesional para parejas que desean mejorar su comunicación,
+              comprender sus dinámicas relacionales y fortalecer su vínculo.
+              Se trabaja en un espacio seguro donde ambos pueden expresar sus experiencias,
+              emociones y necesidades, con el objetivo de construir una relación más consciente,
+              equilibrada y respetuosa.
+            </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#b1e6b3]">
             <div className="w-12 h-12 bg-[#b1e6b3] rounded-full flex items-center justify-center mb-4">
@@ -29,7 +41,13 @@ export default function Theraphy() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-[#66332f]">Tratamineto de Ansiedad</h3>
-            <p className="text-gray-600">Evidence-based approaches to manage and reduce anxiety.</p>
+            <p className="text-gray-600">
+              Espacio terapéutico dirigido a quienes experimentan ansiedad en sus distintas formas:
+              preocupaciones constantes, pensamientos intrusivos, malestar físico o emocional.
+              Desde un enfoque psicoanalítico, se busca comprender las raíces emocionales de la
+              ansiedad, identificar patrones inconscientes y promover una relación más tranquila y
+              compasiva contigo mismo.
+            </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#66332f]">
             <div className="w-12 h-12 bg-[#66332f] rounded-full flex items-center justify-center mb-4">
@@ -38,7 +56,13 @@ export default function Theraphy() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-[#66332f]">Apoyo a la depresión</h3>
-            <p className="text-gray-600">Compassionate care to help you overcome depression.</p>
+            <p className="text-gray-600">
+              Atención terapéutica cálida y respetuosa para personas que atraviesan sentimientos de
+              tristeza profunda, desánimo, vacío o desesperanza.
+              A través de la escucha empática, se acompaña la experiencia subjetiva de cada persona,
+              facilitando la resignificación del malestar, la elaboración de duelos o pérdidas, y el
+              reencuentro con el deseo y el sentido de vida.
+            </p>
           </div>
         </div>
       </div>
