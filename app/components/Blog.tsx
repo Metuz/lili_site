@@ -52,7 +52,7 @@ export default function Blog() {
               transition: { duration: 1.5 } 
             }}
           >
-            Latest Articles
+            Nuesto Blog
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export default function Blog() {
             transition={{ delay: 0.3 }}
             className="text-xl text-[#66332f] max-w-2xl mx-auto"
           >
-            Evidence-based insights for mental wellness
+            Lectura relacionada a la salud mental
           </motion.p>
         </motion.div>
 
