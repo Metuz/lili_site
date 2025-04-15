@@ -1,7 +1,7 @@
 "use server";
 import { z } from "zod";
 
-const nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer"); // eslint-disable-line @typescript-eslint/no-require-imports
 
 interface FormState {
   success?: string;
