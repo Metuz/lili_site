@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useFormStatus, useFormState } from 'react-dom';
+import { useFormStatus } from 'react-dom';
+import { useActionState } from "react";
 import { FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import { sendEmail } from '../api/action';
 
@@ -48,7 +49,7 @@ function SubmitButton() {
 }
 
 export default function Contact() {
-  const [state, formAction] = useFormState(sendEmail, initialState);
+  const [state, formAction] = useActionState(sendEmail, initialState);
   const [touched, setTouched] = useState({
     name: false,
     email: false,
