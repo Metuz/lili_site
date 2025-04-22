@@ -1,7 +1,7 @@
 // Updated Footer Component
 'use client';
 import { motion } from 'framer-motion';
-import { FaFacebook, FaInstagram, FaLinkedin, FaRegCopyright } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaRegCopyright } from 'react-icons/fa';
 import { MdOutlineMail, MdPhone, MdLocationOn } from 'react-icons/md';
 import Image from 'next/image';
 import logo from '@/public/logo.jpeg';
