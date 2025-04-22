@@ -79,7 +79,7 @@ export default function Footer() {
                 height={50}
                 className="rounded-full"
               />
-              <h3 className="text-xl font-bold">Terapia El Fin</h3>
+              <h3 className="text-xl font-bold">Terapia el Fin</h3>
             </motion.div>
             <motion.p className="mb-4">
               Acompañamiento terapéutico profesional basado en el psicoanálisis para tu bienestar emocional.
@@ -166,7 +166,7 @@ export default function Footer() {
         >
           <div className="flex items-center mb-4 md:mb-0">
             <FaRegCopyright className="mr-2" />
-            <span>{currentYear} Terapia El Fin. Todos los derechos reservados.</span>
+            <span>{currentYear} Terapia el Fin. Todos los derechos reservados.</span>
           </div>
           <div className="flex space-x-6">
             <motion.a 

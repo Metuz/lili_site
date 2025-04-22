@@ -6,7 +6,7 @@ import { FaUser, FaUsers, FaBrain, FaHeart } from 'react-icons/fa';
 export default function Therapy() {
   const therapies = [
     {
-      title: "Terapia Individual",
+      title: "Terapia individual",
       description: `Un espacio terapéutico individual donde podrás explorar tu mundo interno con libertad,
       comprender tu historia personal y trabajar en los desafíos emocionales que enfrentas.
       Cada sesión está pensada para acompañarte en tus procesos vitales, con respeto, escucha
@@ -17,7 +17,7 @@ export default function Therapy() {
       border: "border-[#98DDC4]"
     },
     {
-      title: "Terapia de Pareja",
+      title: "Terapia de pareja",
       description: `Acompañamiento profesional para parejas que desean mejorar su comunicación,
       comprender sus dinámicas relacionales y fortalecer su vínculo.
       Se trabaja en un espacio seguro donde ambos pueden expresar sus experiencias,
@@ -28,7 +28,7 @@ export default function Therapy() {
       border: "border-[#80a06e]"
     },
     {
-      title: "Tratamiento para la Ansiedad",
+      title: "Tratamiento para la ansiedad",
       description: `Espacio terapéutico dirigido a quienes experimentan ansiedad en sus distintas formas:
       preocupaciones constantes, pensamientos intrusivos, malestar físico o emocional.
       Desde un enfoque psicoanalítico, se busca comprender las raíces emocionales de la
@@ -39,7 +39,7 @@ export default function Therapy() {
       border: "border-[#B1E6B3]"
     },
     {
-      title: "Apoyo para la Depresión",
+      title: "Apoyo para la depresión",
       description: `Atención terapéutica cálida y respetuosa para personas que atraviesan sentimientos de
       tristeza profunda, desánimo, vacío o desesperanza.
       A través de la escucha empática, se acompaña la experiencia subjetiva de cada persona,
@@ -61,7 +61,7 @@ export default function Therapy() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-2xl md:text-3xl font-bold mb-12 text-center text-[#8E7A73]"
         >
-          Nuestros servicios de Terapia
+          Nuestros servicios de terapia
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

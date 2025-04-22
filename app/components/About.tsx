@@ -43,7 +43,7 @@ export default function About() {
               transition={{ delay: 0.4, ease: "easeOut" }}
               className="text-3xl font-bold border-b-2 border-[#98DDC4] pb-2 text-[#8E7A73]"
             >
-              Sobre Mí
+              Sobre mí
             </motion.h2>
 
             <motion.p
@@ -61,7 +61,7 @@ export default function About() {
               transition={{ delay: 0.7, ease: "easeOut" }}
               className="text-lg leading-relaxed"
             >
-              Mi enfoque se basa en una comprensión profunda de la subjetividad humana, lo que me permite ofrecer un espacio seguro, reflexivo y respetuoso para cada persona que decida emprender este viaje de autoconocimiento.
+             Mi enfoque se basa en una comprensión profunda de la subjetividad humana, lo que me permite ofrecer un espacio seguro, reflexivo y respetuoso para cada persona que decida emprender este viaje de autoconocimiento.
             </motion.p>
 
             <motion.p
@@ -70,7 +70,7 @@ export default function About() {
               transition={{ delay: 0.8, ease: "easeOut" }}
               className="text-lg leading-relaxed"
             >
-              A lo largo de mi trayectoria, he trabajado con niños, adultos y parejas, ayudándoles a enfrentar sus dificultades emocionales, superar momentos difíciles y transformar su bienestar psicológico.
+              A lo largo de mi trayectoria, he trabajado con niños, adultos y parejas, ayudándoles a enfrentar sus dificultades emocionales, superar momentos difíciles y transformar su bienestar psicológico. 
             </motion.p>
 
             <motion.p
@@ -90,16 +90,16 @@ export default function About() {
             >
               <div className="flex flex-wrap gap-4">
                 <span className="bg-[#98DDC4] text-[#3F3F46] px-3 py-1 rounded-full text-sm font-medium">
-                  Psicoterapia Psicoanalítica
+                  Psicoterapia psicoanalítica
                 </span>
                 <span className="bg-[#98DDC4] text-[#3F3F46] px-3 py-1 rounded-full text-sm font-medium">
-                  8+ Años de Experiencia
+                  8+ años de experiencia
                 </span>
                 <span className="bg-[#98DDC4] text-[#3F3F46] px-3 py-1 rounded-full text-sm font-medium">
-                  Atención a Niños y Adultos
+                  Atención a niños y adultos
                 </span>
                 <span className="bg-[#98DDC4] text-[#3F3F46] px-3 py-1 rounded-full text-sm font-medium">
-                  Terapia de Pareja
+                  Terapia de pareja
                 </span>
               </div>
             </motion.div>

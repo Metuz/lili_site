@@ -27,7 +27,7 @@ export default function Hero() {
               transition={{ delay: 0.4, ease: "easeOut" }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#8E7A73]"
             >
-              Tu Camino hacia <span className="whitespace-nowrap">el Bienestar Emocional</span>
+              Tu camino hacia <span className="whitespace-nowrap">el bienestar emocional</span>
             </motion.h1>
             
             <motion.p

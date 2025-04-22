@@ -37,7 +37,7 @@ export default function Navbar() {
             className="rounded-full"
           />
           <span className="text-xl font-semibold hidden sm:block text-[#8E7A73]">
-            Terapia El fin
+            Terapia el fin
           </span>
         </motion.a>
 

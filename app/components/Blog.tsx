@@ -34,7 +34,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "Autocuidado emocional",
+    title: "La importancia del autoconocimiento en la psicoterapia",
     excerpt: "Estrategias prácticas para mantener tu bienestar emocional en la vida diaria.",
     category: "Autocuidado",
     date: "25 Julio 2023",
