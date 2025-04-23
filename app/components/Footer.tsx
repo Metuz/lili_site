@@ -2,7 +2,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaInstagram, FaRegCopyright } from 'react-icons/fa';
-import { MdOutlineMail, MdPhone, MdLocationOn } from 'react-icons/md';
+import { MdOutlineMail, MdPhone } from 'react-icons/md';
 import Image from 'next/image';
 import logo from '@/public/logo.jpeg';
 
@@ -110,13 +110,9 @@ export default function Footer() {
               Contacto
             </motion.h3>
             <motion.ul className="space-y-3">
-              <motion.li className="flex items-start">
-                <MdLocationOn className="text-xl mr-3 mt-1 flex-shrink-0" />
-                <span>123 Wellness Ave, Mental Health City, MH 12345</span>
-              </motion.li>
               <motion.li className="flex items-center">
                 <MdPhone className="text-xl mr-3" />
-                <span>(123) 456-7890</span>
+                <span>(+52) 55 2324 0253</span>
               </motion.li>
               <motion.li className="flex items-center">
                 <MdOutlineMail className="text-xl mr-3" />

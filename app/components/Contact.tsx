@@ -270,12 +270,12 @@ export default function Contact() {
               <p className="flex items-center justify-center gap-2">
                 <FaPhone className="text-[#8E7A73]" />
                 <a href="tel:+525512345678" className="hover:underline hover:text-[#BBA8A0]">
-                  +52 55 1234 5678
+                  +52 55 2324 0253
                 </a>
               </p>
             </div>
             <p className="mt-4 italic">
-              Horario de atención: Lunes a Viernes de 9:00 a 18:00 hrs
+              Atención 24 horas del día de lunes a sábado.
             </p>
           </motion.div>
         </div>
