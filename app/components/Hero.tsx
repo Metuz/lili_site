@@ -45,7 +45,7 @@ export default function Hero() {
               transition={{ delay: 0.8, ease: "easeOut" }}
             >
               <motion.a
-                href="#contact"
+                href="https://calendly.com/lic-lilia-psicologa/30min"
                 whileHover={{ 
                   scale: 1.05,
                   backgroundColor: '#8E7A73'
