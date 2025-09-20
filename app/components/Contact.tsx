@@ -59,25 +59,6 @@ export default function Contact() {
     message: false,
   })
 
-  const errorVariants = {
-    hidden: { opacity: 0, height: 0 },
-    visible: {
-      opacity: 1,
-      height: "auto",
-      transition: { type: "spring", stiffness: 300, ease: "easeOut" },
-    },
-    exit: { opacity: 0, height: 0, transition: { ease: "easeIn" } },
-  }
-
-  const successVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 200, ease: "easeOut" },
-    },
-  }
-
   return (
     <motion.section
       id="contact"
