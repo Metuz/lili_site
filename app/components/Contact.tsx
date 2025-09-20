@@ -75,7 +75,7 @@ export default function Contact() {
         <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-[#A8D5A8]/10 rounded-full blur-xl"></div>
       </div>
 
-      <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto relative z-10">
         <motion.div
           className="text-center mb-16"
           whileInView={{
@@ -107,7 +107,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white/80 backdrop-blur-sm p-6 sm:p-8 lg:p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/10 mx-auto w-full lg:w-auto lg:mx-0"
+            className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/10"
           >
             <AnimatePresence>
               {state?.success && (
