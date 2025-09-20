@@ -1,6 +1,6 @@
 "use client"
-import { motion } from "framer-motion"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
@@ -11,28 +11,28 @@ export default function Hero() {
         <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#8BC34A] rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+      <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <motion.div
+            className="lg:w-1/2 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="lg:w-1/2 text-center lg:text-left"
+            transition={{ duration: 0.8 }}
           >
             <motion.div
+              className="inline-block bg-[#4ECDC4]/10 text-[#4ECDC4] px-4 py-2 rounded-full text-sm font-semibold mb-4 sm:mb-6 border border-[#4ECDC4]/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, ease: "easeOut" }}
-              className="inline-block bg-[#4ECDC4]/10 text-[#4ECDC4] px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-[#4ECDC4]/20"
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               ✨ Psicoterapia Profesional
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight"
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
               Tu camino hacia{" "}
               <span className="text-[#4ECDC4] relative">
@@ -43,46 +43,41 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, ease: "easeOut" }}
-              className="text-xl md:text-2xl mb-8 text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
               Acompañamiento terapéutico personalizado con{" "}
               <span className="font-semibold text-[#8E7A73]">8 años de experiencia</span> para tu crecimiento personal
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start mb-6 sm:mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <motion.a
+              <a
                 href="https://calendly.com/lic-lilia-psicologa/30min"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] hover:from-[#8BC34A] hover:to-[#4ECDC4] text-white font-bold py-4 px-8 rounded-full shadow-xl inline-block transition-all duration-300 text-lg"
+                className="bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] hover:from-[#8BC34A] hover:to-[#4ECDC4] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full shadow-xl inline-block transition-all duration-300 text-base sm:text-lg hover:scale-105 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
                 Agenda una cita
-              </motion.a>
+              </a>
 
-              <motion.a
+              <a
                 href="#about"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-[#8E7A73] font-semibold py-4 px-8 rounded-full border-2 border-[#8E7A73]/20 hover:border-[#8E7A73] transition-all duration-300"
+                className="text-[#8E7A73] font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full border-2 border-[#8E7A73]/20 hover:border-[#8E7A73] transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center"
               >
                 Conoce más sobre mí
-              </motion.a>
+              </a>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, ease: "easeOut" }}
-              className="mt-12 flex flex-wrap gap-6 items-center justify-center lg:justify-start text-sm text-gray-500"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center lg:justify-start text-sm text-gray-500 mb-8 lg:mb-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#8BC34A] rounded-full" />
@@ -92,63 +87,56 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="lg:w-1/2"
+            className="lg:w-1/2 w-full"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="relative">
-              <div className="relative w-full aspect-[4/5] max-w-[500px] mx-auto">
+            <div className="relative max-w-md lg:max-w-lg mx-auto">
+              <div className="relative w-full aspect-[4/5]">
                 <Image
-                  src="/love-yourself.jpg"
+                  src="/love-yourself.png"
                   alt="Professional therapist in a calming environment"
                   fill
                   className="object-cover rounded-2xl shadow-2xl"
                   priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 40vw"
                 />
 
-                {/* Professional overlay card */}
                 <motion.div
+                  className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 bg-white p-4 lg:p-6 rounded-xl shadow-xl border border-gray-100 max-w-[200px] lg:max-w-xs"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, ease: "easeOut" }}
-                  className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs"
+                  transition={{ duration: 0.8, delay: 1.2 }}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#4ECDC4] to-[#8BC34A] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-[#4ECDC4] to-[#8BC34A] rounded-full flex items-center justify-center text-white font-bold text-base lg:text-lg">
                       L
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900">Lilia Aguilar</h3>
-                      <p className="text-sm text-gray-600">Psicoterapeuta</p>
+                      <h3 className="font-bold text-gray-900 text-sm lg:text-base">Lilia Aguilar</h3>
+                      <p className="text-xs lg:text-sm text-gray-600">Psicoterapeuta</p>
                     </div>
                   </div>
-                  <div className="mt-3 flex items-center gap-1">
+                  <div className="mt-2 lg:mt-3 flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-4 h-4 bg-[#8BC34A] rounded-full" />
+                      <div key={i} className="w-3 h-3 lg:w-4 lg:h-4 bg-[#8BC34A] rounded-full" />
                     ))}
-                    <span className="ml-2 text-sm text-gray-600">8+ años</span>
+                    <span className="ml-1 lg:ml-2 text-xs lg:text-sm text-gray-600">8+ años</span>
                   </div>
                 </motion.div>
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#A8D5A8]/20 rounded-full blur-xl" />
-              <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-[#81C7D4]/20 rounded-full blur-xl" />
+              <div className="absolute -top-4 -right-4 w-16 h-16 lg:w-24 lg:h-24 bg-[#A8D5A8]/20 rounded-full blur-xl" />
+              <div className="absolute -bottom-8 -right-8 w-20 h-20 lg:w-32 lg:h-32 bg-[#81C7D4]/20 rounded-full blur-xl" />
             </div>
           </motion.div>
         </div>
       </div>
 
       <div className="relative">
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="h-px bg-gradient-to-r from-transparent via-[#4ECDC4]/30 to-transparent w-full"
-        />
+        <div className="h-px bg-gradient-to-r from-transparent via-[#4ECDC4]/30 to-transparent w-full" />
       </div>
     </section>
   )

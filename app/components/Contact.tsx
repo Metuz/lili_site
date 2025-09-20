@@ -75,7 +75,7 @@ export default function Contact() {
         <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-[#A8D5A8]/10 rounded-full blur-xl"></div>
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
           whileInView={{
@@ -107,7 +107,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/10"
+            className="bg-white/80 backdrop-blur-sm p-6 sm:p-8 lg:p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/10 mx-auto w-full lg:w-auto lg:mx-0"
           >
             <AnimatePresence>
               {state?.success && (
@@ -310,7 +310,8 @@ export default function Contact() {
               className="bg-gradient-to-r from-[#A8D5A8]/20 to-[#4ECDC4]/20 p-8 rounded-2xl text-center border border-[#4ECDC4]/20"
             >
               <blockquote className="text-lg italic text-gray-700 mb-4">
-                &ldquo;Este no es el final. Ni siquiera es el principio del fin. Pero, quizás, el final del principio&rdquo;
+                &ldquo;Este no es el final. Ni siquiera es el principio del fin. Pero, quizás, el final del
+                principio&rdquo;
               </blockquote>
               <cite className="text-[#4ECDC4] font-semibold">— Winston Churchill</cite>
             </motion.div>
