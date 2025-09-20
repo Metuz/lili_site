@@ -25,12 +25,12 @@ function SubmitButton() {
       disabled={pending}
       initial={{ scale: 1 }}
       whileHover={{
-        scale: 1.03,
-        y: -2,
+        scale: 1.02,
+        boxShadow: "0 8px 25px rgba(78, 205, 196, 0.3)",
       }}
-      whileTap={{ scale: 0.97 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="w-full bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] text-white font-bold py-4 px-6 rounded-full shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 transition-all duration-300"
+      className="w-full bg-gradient-to-r from-[#4ECDC4] to-[#81C7D4] text-white font-semibold py-4 px-8 rounded-xl shadow-lg flex items-center justify-center gap-3 hover:shadow-xl transition-all duration-300"
     >
       {pending ? (
         <motion.span
@@ -38,12 +38,12 @@ function SubmitButton() {
           transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
           className="inline-block"
         >
-          <FaPaperPlane />
+          <FaPaperPlane className="text-lg" />
         </motion.span>
       ) : (
         <>
-          <FaPaperPlane />
-          Enviar mensaje
+          <FaPaperPlane className="text-lg" />
+          Enviar Mensaje
         </>
       )}
     </motion.button>
@@ -66,14 +66,16 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="py-24 px-6 bg-gradient-to-br from-[#4ECDC4]/5 to-[#8BC34A]/5 relative overflow-hidden"
+      className="py-20 px-4 bg-gradient-to-br from-[#A8D5A8]/20 via-white to-[#81C7D4]/10 relative overflow-hidden"
     >
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#4ECDC4] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[#8BC34A] rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 left-10 w-20 h-20 bg-[#4ECDC4]/10 rounded-full blur-xl"></div>
+        <div className="absolute top-32 right-20 w-32 h-32 bg-[#8BC34A]/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-[#81C7D4]/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-[#A8D5A8]/10 rounded-full blur-xl"></div>
       </div>
 
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="container mx-auto relative z-10">
         <motion.div
           className="text-center mb-16"
           whileInView={{
@@ -81,45 +83,47 @@ export default function Contact() {
             transition: { duration: 1.5, ease: "easeOut" },
           }}
         >
-          <div className="inline-block bg-[#4ECDC4]/10 text-[#4ECDC4] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Ponte en contacto
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            Comienza tu{" "}
-            <span className="text-[#4ECDC4] relative">
-              transformación
-              <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] rounded-full" />
-            </span>{" "}
-            hoy
-          </h2>
-          <p className="max-w-3xl mx-auto text-xl text-gray-600 leading-relaxed">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            Contáctanos
+          </motion.h2>
+          <motion.p
+            className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
             Estamos aquí para escucharte. Completa el formulario y nos pondremos en contacto contigo en un plazo máximo
-            de 24 horas para agendar tu consulta gratuita.
-          </p>
+            de 24 horas.
+          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, ease: "easeOut" }}
-            className="bg-white p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/20"
+            transition={{ delay: 0.4 }}
+            className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/10"
           >
             <AnimatePresence>
               {state?.success && (
                 <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  className="mb-6 p-4 bg-gradient-to-r from-[#8BC34A] to-[#8BC34A]/80 text-white rounded-xl text-center shadow-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="mb-6 p-4 bg-gradient-to-r from-[#8BC34A] to-[#A8D5A8] text-white rounded-xl text-center shadow-lg"
                 >
-                  <FaCheckCircle className="inline-block mr-2" />
+                  <FaCheckCircle className="inline-block mr-2 text-xl" />
                   {state.success}
                 </motion.div>
               )}
             </AnimatePresence>
 
             <form action={formAction} className="space-y-6">
-              {/* Form fields remain the same but with enhanced styling */}
               <motion.div className="relative">
                 <label htmlFor="name" className="block mb-2 font-semibold text-gray-700">
                   Nombre*
@@ -130,31 +134,56 @@ export default function Contact() {
                   id="name"
                   required
                   onBlur={() => setTouched({ ...touched, name: true })}
-                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] focus:border-transparent transition-all duration-300"
+                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700"
                   placeholder="Tu nombre completo"
                 />
-                {/* Error handling remains the same */}
+                <AnimatePresence>
+                  {state.errors.name && touched.name && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {state.errors.name}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </motion.div>
 
               <motion.div className="relative">
                 <label htmlFor="email" className="block mb-2 font-semibold text-gray-700">
                   Email*
                 </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  onBlur={() => setTouched({ ...touched, email: true })}
-                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] focus:border-transparent transition-all duration-300"
-                  placeholder="tu.email@example.com"
-                />
-                {/* Error handling remains the same */}
+                <div className="relative">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    onBlur={() => setTouched({ ...touched, email: true })}
+                    className="w-full p-4 pl-12 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700"
+                    placeholder="tu.email@example.com"
+                  />
+                  <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#4ECDC4]" />
+                </div>
+                <AnimatePresence>
+                  {state.errors.email && touched.email && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {state.errors.email}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </motion.div>
 
               <motion.div className="relative">
                 <label htmlFor="phone" className="block mb-2 font-semibold text-gray-700">
-                  Teléfono <span className="text-sm text-gray-600">(opcional)</span>
+                  Teléfono <span className="text-sm text-gray-500 font-normal">(opcional)</span>
                 </label>
                 <div className="relative">
                   <input
@@ -162,12 +191,23 @@ export default function Contact() {
                     name="phone"
                     id="phone"
                     onBlur={() => setTouched({ ...touched, phone: true })}
-                    className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] focus:border-transparent transition-all duration-300 pl-10"
+                    className="w-full p-4 pl-12 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700"
                     placeholder="+55 123 456 789"
                   />
-                  <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600" />
+                  <FaPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#4ECDC4]" />
                 </div>
-                {/* Error handling remains the same */}
+                <AnimatePresence>
+                  {state.errors.phone && touched.phone && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {state.errors.phone}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </motion.div>
 
               <motion.div className="relative">
@@ -177,13 +217,24 @@ export default function Contact() {
                 <textarea
                   name="message"
                   id="message"
-                  rows={4}
+                  rows={5}
                   required
                   onBlur={() => setTouched({ ...touched, message: true })}
-                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] focus:border-transparent transition-all duration-300"
+                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700 resize-none"
                   placeholder="¿Cómo podemos ayudarte?"
                 ></textarea>
-                {/* Error handling remains the same */}
+                <AnimatePresence>
+                  {state.errors.message && touched.message && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {state.errors.message}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </motion.div>
 
               <SubmitButton />
@@ -193,22 +244,23 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, ease: "easeOut" }}
+            transition={{ delay: 0.5 }}
             className="space-y-8"
           >
-            <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/20">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Información de contacto</h3>
+            <div className="bg-gradient-to-br from-[#4ECDC4]/10 to-[#A8D5A8]/10 p-8 rounded-2xl border border-[#4ECDC4]/20">
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">Información de Contacto</h3>
 
               <div className="space-y-6">
                 <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-[#4ECDC4]/10 to-[#4ECDC4]/5"
+                  className="flex items-start gap-4 p-4 bg-white/60 rounded-xl"
+                  whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.8)" }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#4ECDC4] to-[#8BC34A] rounded-full flex items-center justify-center text-white">
-                    <FaEnvelope />
+                  <div className="bg-[#4ECDC4] p-3 rounded-full">
+                    <FaEnvelope className="text-white text-lg" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Email</p>
+                    <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
                     <a
                       href="mailto:contacto@terapiaelfin.com"
                       className="text-[#4ECDC4] hover:text-[#8BC34A] transition-colors"
@@ -219,69 +271,51 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-[#8BC34A]/10 to-[#8BC34A]/5"
+                  className="flex items-start gap-4 p-4 bg-white/60 rounded-xl"
+                  whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.8)" }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#8BC34A] to-[#4ECDC4] rounded-full flex items-center justify-center text-white">
-                    <FaPhone />
+                  <div className="bg-[#8BC34A] p-3 rounded-full">
+                    <FaPhone className="text-white text-lg" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Teléfono</p>
-                    <a href="tel:+525512345678" className="text-[#8BC34A] hover:text-[#4ECDC4] transition-colors">
+                    <h4 className="font-semibold text-gray-800 mb-1">Teléfono</h4>
+                    <a href="tel:+525512345678" className="text-[#4ECDC4] hover:text-[#8BC34A] transition-colors">
                       +52 55 2324 0253
                     </a>
                   </div>
                 </motion.div>
 
                 <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-[#81C7D4]/10 to-[#81C7D4]/5"
+                  className="flex items-start gap-4 p-4 bg-white/60 rounded-xl"
+                  whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.8)" }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#81C7D4] to-[#A8D5A8] rounded-full flex items-center justify-center text-white">
-                    <FaClock />
+                  <div className="bg-[#81C7D4] p-3 rounded-full">
+                    <FaClock className="text-white text-lg" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Horarios</p>
-                    <p className="text-gray-600">Lunes a Sábado: 9:00 - 20:00</p>
+                    <h4 className="font-semibold text-gray-800 mb-1">Horarios</h4>
+                    <p className="text-gray-600">Lunes a Sábado</p>
+                    <p className="text-gray-600">24 horas del día</p>
                   </div>
                 </motion.div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#4ECDC4]/10 to-[#8BC34A]/10 p-8 rounded-2xl border border-[#4ECDC4]/20">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Primera consulta gratuita</h3>
-              <p className="text-gray-600 mb-4">
-                Ofrecemos una primera sesión sin costo para conocernos y evaluar cómo podemos ayudarte en tu proceso
-                terapéutico.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#8BC34A] rounded-full" />
-                  <span>Consultas presenciales y online</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#4ECDC4] rounded-full" />
-                  <span>Atención personalizada</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#81C7D4] rounded-full" />
-                  <span>Enfoque psicoanalítico</span>
-                </li>
-              </ul>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="bg-gradient-to-r from-[#A8D5A8]/20 to-[#4ECDC4]/20 p-8 rounded-2xl text-center border border-[#4ECDC4]/20"
+            >
+              <blockquote className="text-lg italic text-gray-700 mb-4">
+                &ldquo;Este no es el final. Ni siquiera es el principio del fin. Pero, quizás, el final del principio&rdquo;
+              </blockquote>
+              <cite className="text-[#4ECDC4] font-semibold">— Winston Churchill</cite>
+            </motion.div>
           </motion.div>
         </div>
-      </div>
-
-      {/* Enhanced section divider */}
-      <div className="relative mt-24">
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="h-px bg-gradient-to-r from-transparent via-[#4ECDC4]/30 to-transparent w-full"
-        />
       </div>
     </motion.section>
   )

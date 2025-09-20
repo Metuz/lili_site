@@ -65,7 +65,7 @@ export default function Hero() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] hover:from-[#8BC34A] hover:to-[#4ECDC4] text-white font-bold py-4 px-8 rounded-full shadow-xl inline-block transition-all duration-300 text-lg"
               >
-                Agenda una cita gratuita
+                Agenda una cita
               </motion.a>
 
               <motion.a
@@ -87,10 +87,6 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#8BC34A] rounded-full" />
                 <span>Consultas presenciales y online</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-[#4ECDC4] rounded-full" />
-                <span>Primera consulta gratuita</span>
               </div>
             </motion.div>
           </motion.div>

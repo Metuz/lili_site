@@ -150,7 +150,7 @@ export default function Therapy() {
           <div className="bg-gradient-to-r from-[#4ECDC4]/10 to-[#8BC34A]/10 p-8 rounded-2xl border border-[#4ECDC4]/20">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Listo para comenzar tu proceso de sanación?</h3>
             <p className="text-gray-600 mb-6 text-lg">
-              Agenda una consulta gratuita y descubre cómo podemos acompañarte en tu camino hacia el bienestar.
+              Agenda una consulta y descubre cómo podemos acompañarte en tu camino hacia el bienestar.
             </p>
             <motion.a
               href="https://calendly.com/lic-lilia-psicologa/30min"
@@ -158,7 +158,7 @@ export default function Therapy() {
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
             >
-              Agenda tu consulta gratuita
+              Agenda tu consulta
             </motion.a>
           </div>
         </motion.div>
