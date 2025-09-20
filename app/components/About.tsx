@@ -112,7 +112,7 @@ export default function About() {
                 transition={{ delay: 0.9, ease: "easeOut" }}
                 className="relative bg-gradient-to-r from-[#4ECDC4]/5 to-[#8BC34A]/5 p-6 rounded-xl border-l-4 border-[#4ECDC4]"
               >
-                <div className="absolute top-4 left-4 text-[#4ECDC4] text-4xl font-serif">"</div>
+                <div className="absolute top-4 left-4 text-[#4ECDC4] text-4xl font-serif">&ldquo;</div>
                 <p className="text-lg font-medium italic text-[#8E7A73] pl-8">
                   Mi objetivo es ofrecerte un acompañamiento único, basado en el respeto por tu proceso y tu tiempo,
                   para que puedas encontrar las herramientas internas que te permitan crecer y sanar.

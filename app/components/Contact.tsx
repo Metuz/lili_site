@@ -181,7 +181,7 @@ export default function Contact() {
                   required
                   onBlur={() => setTouched({ ...touched, message: true })}
                   className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] focus:border-transparent transition-all duration-300"
-                  placeholder="Como podemos ayudarte?"
+                  placeholder="¿Cómo podemos ayudarte?"
                 ></textarea>
                 {/* Error handling remains the same */}
               </motion.div>
