@@ -31,49 +31,12 @@ export default function Recommendation() {
           setRecommendations(data.recommendations)
         } else {
           // Fallback to default recommendations if none exist
-          setRecommendations([
-            {
-              id: "1",
-              name: "María González",
-              email: "",
-              rating: 5,
-              testimonial:
-                "La terapia individual me ayudó a superar momentos muy difíciles. El ambiente es acogedor y profesional.",
-              timestamp: new Date().toISOString(),
-            },
-            {
-              id: "2",
-              name: "Carlos Ramírez",
-              email: "",
-              rating: 5,
-              testimonial:
-                "Excelente atención. La terapia de pareja nos ayudó a comunicarnos mejor y fortalecer nuestra relación.",
-              timestamp: new Date().toISOString(),
-            },
-            {
-              id: "3",
-              name: "Ana Martínez",
-              email: "",
-              rating: 5,
-              testimonial: "Muy recomendable. Me siento mucho mejor después de cada sesión. Gracias por su dedicación.",
-              timestamp: new Date().toISOString(),
-            },
-          ])
+          setRecommendations([])
         }
       } catch (error) {
         console.error("Error loading recommendations:", error)
         // Use fallback recommendations on error
-        setRecommendations([
-          {
-            id: "1",
-            name: "María González",
-            email: "",
-            rating: 5,
-            testimonial:
-              "La terapia individual me ayudó a superar momentos muy difíciles. El ambiente es acogedor y profesional.",
-            timestamp: new Date().toISOString(),
-          },
-        ])
+        setRecommendations([])
       } finally {
         setLoading(false)
       }
