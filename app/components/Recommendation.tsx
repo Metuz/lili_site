@@ -1,118 +1,111 @@
-// Updated About Component with Divider
-'use client';
+"use client"
+
+import type React from "react"
+
 import { useState, useEffect } from "react"
+
+interface Recommendation {
+  id: string
+  name: string
+  email: string
+  rating: number
+  testimonial: string
+  timestamp: string
+}
 
 export default function Recommendation() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const [recommendations, setRecommendations] = useState<Recommendation[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const testimonials = [
-    {
-      id: 1,
-      rating: 5,
-      text: "Las sesiones me han ayudado enormemente a entender mis emociones y a desarrollar herramientas para manejar la ansiedad. Un espacio seguro y acogedor.",
-      name: "Gabriel Vázquez",
-      initials: "GV",
-      subtitle: "Paciente desde 2023",
-      color: "#a8d5ba",
-    },
-    {
-      id: 2,
-      rating: 5,
-      text: "La terapia de pareja nos ayudó a reconectar y a comunicarnos mejor. Estamos muy agradecidos por el acompañamiento profesional y empático.",
-      name: "Ana Karen Alpide",
-      initials: "AKA",
-      subtitle: "Terapia de pareja",
-      color: "#9b8b8b",
-    },
-    {
-      id: 3,
-      rating: 5,
-      text: "Encontré en este espacio la guía que necesitaba para superar momentos difíciles. El enfoque personalizado hace toda la diferencia.",
-      name: "Eric Lozada Ramos",
-      initials: "ELR",
-      subtitle: "Paciente desde 2024",
-      color: "#a8d5ba",
-    },
-    {
-      id: 4,
-      rating: 5,
-      text: "Un proceso transformador que me permitió conocerme mejor y construir relaciones más saludables. Totalmente recomendado.",
-      name: "Diego y Rebeca",
-      initials: "DR",
-      subtitle: "Paciente desde 2023",
-      color: "#9b8b8b",
-    },
-    {
-      id: 5,
-      rating: 5,
-      text: "La empatía y profesionalismo hacen de cada sesión un espacio de crecimiento. He logrado avances que no creía posibles.",
-      name: "Valente García",
-      initials: "VG",
-      subtitle: "Paciente desde 2024",
-      color: "#a8d5ba",
-    },
-    {
-      id: 6,
-      rating: 5,
-      text: "La empatía y profesionalismo hacen de cada sesión un espacio de crecimiento. He logrado avances que no creía posibles.",
-      name: "Diego E. Rodriguez",
-      initials: "DR",
-      subtitle: "Paciente desde 2024",
-      color: "#a8d5ba",
-    },
-    {
-      id: 7,
-      rating: 5,
-      text: "La empatía y profesionalismo hacen de cada sesión un espacio de crecimiento. He logrado avances que no creía posibles.",
-      name: "Mariel García",
-      initials: "MG",
-      subtitle: "Paciente desde 2024",
-      color: "#a8d5ba",
-    },
-    {
-      id: 8,
-      rating: 5,
-      text: "La empatía y profesionalismo hacen de cada sesión un espacio de crecimiento. He logrado avances que no creía posibles.",
-      name: "Diego Domíguez",
-      initials: "DD",
-      subtitle: "Paciente desde 2024",
-      color: "#a8d5ba",
-    },
-    {
-      id: 9,
-      rating: 5,
-      text: "La empatía y profesionalismo hacen de cada sesión un espacio de crecimiento. He logrado avances que no creía posibles.",
-      name: "Fabiola Cerón Alpide",
-      initials: "FCA",
-      subtitle: "Paciente desde 2024",
-      color: "#a8d5ba",
-    },
-    {
-      id: 10,
-      rating: 5,
-      text: "La empatía y profesionalismo hacen de cada sesión un espacio de crecimiento. He logrado avances que no creía posibles.",
-      name: "Hinochi Luna",
-      initials: "HL",
-      subtitle: "Paciente desde 2024",
-      color: "#a8d5ba",
+  // Fetch recommendations from API
+  useEffect(() => {
+    async function fetchRecommendations() {
+      try {
+        const response = await fetch("/api/get-recommendations")
+        const data = await response.json()
+
+        if (data.success && data.recommendations.length > 0) {
+          setRecommendations(data.recommendations)
+        } else {
+          // Fallback to default recommendations if none exist
+          setRecommendations([
+            {
+              id: "1",
+              name: "María González",
+              email: "",
+              rating: 5,
+              testimonial:
+                "La terapia individual me ayudó a superar momentos muy difíciles. El ambiente es acogedor y profesional.",
+              timestamp: new Date().toISOString(),
+            },
+            {
+              id: "2",
+              name: "Carlos Ramírez",
+              email: "",
+              rating: 5,
+              testimonial:
+                "Excelente atención. La terapia de pareja nos ayudó a comunicarnos mejor y fortalecer nuestra relación.",
+              timestamp: new Date().toISOString(),
+            },
+            {
+              id: "3",
+              name: "Ana Martínez",
+              email: "",
+              rating: 5,
+              testimonial: "Muy recomendable. Me siento mucho mejor después de cada sesión. Gracias por su dedicación.",
+              timestamp: new Date().toISOString(),
+            },
+          ])
+        }
+      } catch (error) {
+        console.error("Error loading recommendations:", error)
+        // Use fallback recommendations on error
+        setRecommendations([
+          {
+            id: "1",
+            name: "María González",
+            email: "",
+            rating: 5,
+            testimonial:
+              "La terapia individual me ayudó a superar momentos muy difíciles. El ambiente es acogedor y profesional.",
+            timestamp: new Date().toISOString(),
+          },
+        ])
+      } finally {
+        setLoading(false)
+      }
     }
-  ]
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-  }
+    fetchRecommendations()
+  }, [])
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
+  // Auto-play carousel
+  useEffect(() => {
+    if (recommendations.length <= 1) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % recommendations.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [recommendations.length])
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
   }
 
-  // Handle touch events for mobile swipe
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? recommendations.length - 1 : prev - 1))
+  }
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % recommendations.length)
+  }
+
+  // Touch handlers for mobile swipe
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX)
   }
@@ -123,36 +116,41 @@ export default function Recommendation() {
 
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 75) {
-      // Swiped left
-      nextSlide()
+      goToNext()
     }
-
     if (touchStart - touchEnd < -75) {
-      // Swiped right
-      prevSlide()
+      goToPrevious()
     }
   }
 
-  // Auto-play carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 5000)
+  if (loading) {
+    return (
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#8b7b7b] mb-12">Cargando testimonios...</h2>
+        </div>
+      </section>
+    )
+  }
 
-    return () => clearInterval(interval)
-  }, [currentIndex])
+  if (recommendations.length === 0) {
+    return (
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#8b7b7b] mb-12">Testimonios de Nuestros Pacientes</h2>
+          <p className="text-[#8b7b7b]">No hay testimonios disponibles aún.</p>
+        </div>
+      </section>
+    )
+  }
 
   return (
-    <section className="bg-white px-6 py-20">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="mb-4 text-center font-serif text-3xl text-[#8b7b7b]">Lo que dicen nuestros pacientes</h2>
-        <p className="mb-12 text-center text-[#6b5b5b]">
-          Testimonios reales de personas que han encontrado su camino hacia el bienestar
-        </p>
+    <section className="py-16 px-4 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center text-[#8b7b7b] mb-12">Testimonios de Nuestros Pacientes</h2>
 
-        {/* Carousel Container */}
         <div className="relative">
-          {/* Carousel Wrapper */}
+          {/* Carousel Container */}
           <div
             className="overflow-hidden"
             onTouchStart={handleTouchStart}
@@ -163,101 +161,79 @@ export default function Recommendation() {
               className="flex transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div
-                    className="mx-auto max-w-2xl rounded-lg bg-[#f5f1ed] shadow-sm"
-                    style={{ borderLeft: `4px solid ${testimonial.color}` }}
-                  >
-                    <div className="p-8">
-                      {/* Star Rating */}
-                      <div className="mb-4 flex justify-center gap-1">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <svg
-                            key={i}
-                            className="h-5 w-5"
-                            fill="#d4af37"
-                            stroke="#d4af37"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                          </svg>
-                        ))}
+              {recommendations.map((recommendation) => (
+                <div key={recommendation.id} className="w-full flex-shrink-0 px-4">
+                  <div className="bg-white border-l-4 border-[#a8d5ba] rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-[#a8d5ba] flex items-center justify-center text-white font-semibold">
+                        {recommendation.name.charAt(0)}
                       </div>
-
-                      {/* Testimonial Text */}
-                      <p className="mb-6 text-center text-lg leading-relaxed text-[#6b5b5b]">{testimonial.text}</p>
-
-                      {/* Author Info */}
-                      <div className="flex items-center justify-center gap-3">
-                        <div
-                          className="flex h-12 w-12 items-center justify-center rounded-full text-white font-semibold"
-                          style={{ backgroundColor: testimonial.color }}
-                        >
-                          {testimonial.initials}
-                        </div>
-                        <div>
-                          <p className="font-semibold text-[#8b7b7b]">{testimonial.name}</p>
-                          <p className="text-sm text-[#9b8b8b]">{testimonial.subtitle}</p>
+                      <div>
+                        <h3 className="font-semibold text-[#8b7b7b]">{recommendation.name}</h3>
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <svg
+                              key={i}
+                              className={`w-4 h-4 ${
+                                i < recommendation.rating ? "text-yellow-400 fill-current" : "text-gray-300"
+                              }`}
+                              viewBox="0 0 20 20"
+                            >
+                              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                          ))}
                         </div>
                       </div>
                     </div>
+                    <p className="text-[#8b7b7b] leading-relaxed">"{recommendation.testimonial}"</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Previous Button */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg hover:bg-[#f5f1ed] transition-colors md:left-4"
-            aria-label="Previous testimonial"
-          >
-            <svg
-              className="h-6 w-6 text-[#8b7b7b]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+          {/* Navigation Buttons */}
+          {recommendations.length > 1 && (
+            <>
+              <button
+                onClick={goToPrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <svg className="w-6 h-6 text-[#8b7b7b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-          {/* Next Button */}
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg hover:bg-[#f5f1ed] transition-colors md:right-4"
-            aria-label="Next testimonial"
-          >
-            <svg
-              className="h-6 w-6 text-[#8b7b7b]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+              <button
+                onClick={goToNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
+                aria-label="Next testimonial"
+              >
+                <svg className="w-6 h-6 text-[#8b7b7b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          )}
 
-        {/* Dots Navigation */}
-        <div className="mt-8 flex justify-center gap-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-3 w-3 rounded-full transition-all ${
-                index === currentIndex ? "bg-[#a8d5ba] w-8" : "bg-[#d5d5d5] hover:bg-[#b5b5b5]"
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
+          {/* Dots Indicator */}
+          {recommendations.length > 1 && (
+            <div className="flex justify-center gap-2 mt-8">
+              {recommendations.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentIndex ? "bg-[#a8d5ba] w-8" : "bg-gray-300"
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
-  );
+  )
 }

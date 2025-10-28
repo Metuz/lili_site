@@ -5,12 +5,12 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 
-export default function EnviarRecomendacion() {
+export default function SubmitRecommendation() {
   const [formData, setFormData] = useState({
-    nombre: "",
+    name: "",
     email: "",
-    calificacion: "5",
-    testimonio: "",
+    rating: "5",
+    testimonial: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
@@ -21,7 +21,7 @@ export default function EnviarRecomendacion() {
     setSubmitStatus("idle")
 
     try {
-      const response = await fetch("/api/submit-recommendation", {
+      const response = await fetch("/api/submit_recommendation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function EnviarRecomendacion() {
 
       if (response.ok) {
         setSubmitStatus("success")
-        setFormData({ nombre: "", email: "", calificacion: "5", testimonio: "" })
+        setFormData({ name: "", email: "", rating: "5", testimonial: "" })
       } else {
         setSubmitStatus("error")
       }
@@ -76,7 +76,7 @@ export default function EnviarRecomendacion() {
           {submitStatus === "success" && (
             <div className="mb-6 p-4 bg-[#a8d5ba] bg-opacity-20 border-l-4 border-[#a8d5ba] rounded">
               <p className="text-[#8b7b7b] font-medium">
-                ¡Gracias por compartir tu experiencia! Tu recomendación será revisada y publicada pronto.
+                ¡Gracias por compartir tu experiencia! Tu recomendación será publicada pronto.
               </p>
             </div>
           )}
@@ -90,16 +90,16 @@ export default function EnviarRecomendacion() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Nombre */}
+            {/* Name */}
             <div>
-              <label htmlFor="nombre" className="block text-sm font-medium text-[#8b7b7b] mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-[#8b7b7b] mb-2">
                 Nombre (opcional)
               </label>
               <input
                 type="text"
-                id="nombre"
-                name="nombre"
-                value={formData.nombre}
+                id="name"
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 placeholder="Puedes usar solo tus iniciales o dejarlo en blanco"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a8d5ba] focus:border-transparent transition-all"
@@ -126,15 +126,15 @@ export default function EnviarRecomendacion() {
               </p>
             </div>
 
-            {/* Calificación */}
+            {/* Rating */}
             <div>
-              <label htmlFor="calificacion" className="block text-sm font-medium text-[#8b7b7b] mb-2">
+              <label htmlFor="rating" className="block text-sm font-medium text-[#8b7b7b] mb-2">
                 Calificación <span className="text-red-500">*</span>
               </label>
               <select
-                id="calificacion"
-                name="calificacion"
-                value={formData.calificacion}
+                id="rating"
+                name="rating"
+                value={formData.rating}
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a8d5ba] focus:border-transparent transition-all"
@@ -147,15 +147,15 @@ export default function EnviarRecomendacion() {
               </select>
             </div>
 
-            {/* Testimonio */}
+            {/* Testimonial */}
             <div>
-              <label htmlFor="testimonio" className="block text-sm font-medium text-[#8b7b7b] mb-2">
+              <label htmlFor="testimonial" className="block text-sm font-medium text-[#8b7b7b] mb-2">
                 Tu experiencia <span className="text-red-500">*</span>
               </label>
               <textarea
-                id="testimonio"
-                name="testimonio"
-                value={formData.testimonio}
+                id="testimonial"
+                name="testimonial"
+                value={formData.testimonial}
                 onChange={handleChange}
                 required
                 rows={6}
@@ -168,7 +168,7 @@ export default function EnviarRecomendacion() {
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isSubmitting || formData.testimonio.length < 50}
+              disabled={isSubmitting || formData.testimonial.length < 50}
               className="w-full bg-[#8b7b7b] text-white py-4 rounded-lg font-medium hover:bg-[#6b5b5b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Enviando..." : "Enviar recomendación"}
