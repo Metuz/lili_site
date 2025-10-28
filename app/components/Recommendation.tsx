@@ -148,7 +148,7 @@ export default function Recommendation() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-[#8b7b7b] leading-relaxed">"{recommendation.testimonial}"</p>
+                    <p className="text-[#8b7b7b] leading-relaxed">{recommendation.testimonial}</p>
                   </div>
                 </div>
               ))}
