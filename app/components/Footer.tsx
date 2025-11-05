@@ -116,7 +116,7 @@ export default function Footer() {
               </motion.li>
               <motion.li className="flex items-center">
                 <MdOutlineMail className="text-xl mr-3" />
-                <span>contacto@terapiaelfin.com</span>
+                <span>lic.lilia.psicologa@gmail.com</span>
               </motion.li>
             </motion.ul>
           </motion.div>

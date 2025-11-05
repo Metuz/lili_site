@@ -263,8 +263,8 @@ export default function Contact() {
             <div className="space-y-2">
               <p className="flex items-center justify-center gap-2">
                 <FaEnvelope className="text-[#8E7A73]" />
-                <a href="mailto:contacto@terapiaelfin.com" className="hover:underline hover:text-[#BBA8A0]">
-                  contacto@terapiaelfin.com
+                <a href="mailto:lic.lilia.psicologa@gmail.com" className="hover:underline hover:text-[#BBA8A0]">
+                  lic.lilia.psicologa@gmail.com
                 </a>
               </p>
               <p className="flex items-center justify-center gap-2">

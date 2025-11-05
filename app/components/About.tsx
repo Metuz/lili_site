@@ -52,7 +52,7 @@ export default function About() {
               transition={{ delay: 0.6, ease: "easeOut" }}
               className="text-lg leading-relaxed"
             >
-              Mi nombre es <strong className="text-[#8E7A73]">Lilia Aguilar</strong>, psicoterapeuta psicoanalítica con 8 años de experiencia acompañando a personas en su proceso de sanación emocional.
+              Mi nombre es <strong className="text-[#8E7A73]">Lilia Aguilar (Céd. Prof. 15203090) </strong>, psicoterapeuta psicoanalítica con 8 años de experiencia acompañando a personas en su proceso de sanación emocional.
             </motion.p>
 
             <motion.p
