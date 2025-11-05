@@ -98,12 +98,13 @@ export default function Recommendation() {
 
   if (recommendations.length === 0) {
     return (
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#8b7b7b] mb-12">Testimonios de Nuestros Pacientes</h2>
-          <p className="text-[#8b7b7b]">No hay testimonios disponibles aún.</p>
-        </div>
-      </section>
+      <></>
+      // <section className="py-16 px-4 bg-white">
+      //   <div className="max-w-6xl mx-auto text-center">
+      //     <h2 className="text-3xl font-bold text-[#8b7b7b] mb-12">Testimonios de Nuestros Pacientes</h2>
+      //     <p className="text-[#8b7b7b]">No hay testimonios disponibles aún.</p>
+      //   </div>
+      // </section>
     )
   }
 
