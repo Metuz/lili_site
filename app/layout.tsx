@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Terepia el fin | Terapia Psicologica Profesional",
+  title: "Terapia el fin | Terapia Psicologica Profesional",
   description: "Servicios profesionales de psicología para ayudarle a lograr el bienestar mental.",
 };
 

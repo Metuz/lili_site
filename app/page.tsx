@@ -4,6 +4,7 @@ import About from "./components/About";
 import Therapy from "./components/Therapy";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import Recommendation from "./components/Recommendation";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Therapy />
+      <Recommendation />
       <Contact />
       <Footer />
     </>
