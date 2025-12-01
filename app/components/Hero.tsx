@@ -40,9 +40,9 @@ export default function Hero() {
 
       {/* Second div: Bottom elements container (logo + rene) */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
-        {/* Logo - centered */}
+        {/* Logo - centered - hidden on mobile, visible from md breakpoint */}
         <motion.div
-          className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+          className="hidden md:block absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-30"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -58,9 +58,9 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Rene character - bottom right */}
+        {/* Rene character - bottom right on desktop, centered on mobile */}
         <motion.div
-          className="absolute -bottom-10 sm:-bottom-8 md:-bottom-6 right-0 sm:right-4 md:right-8 lg:right-12 xl:right-16"
+          className="absolute -bottom-6 sm:-bottom-4 md:-bottom-2 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-12 xl:right-16"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
