@@ -138,7 +138,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-[#8BC34A]/20 rounded-full flex items-center justify-center">
                   <MdOutlineMail className="text-[#8BC34A]" />
                 </div>
-                <span>contacto@terapiaelfin.com</span>
+                <span>lic.lilia.psicologa@gmail.com</span>
               </motion.li>
               <motion.li
                 whileHover={{ x: 5 }}

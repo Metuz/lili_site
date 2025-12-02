@@ -263,10 +263,10 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
                     <a
-                      href="mailto:contacto@terapiaelfin.com"
+                      href="mailto:lic.lilia.psicologa@gmail.com"
                       className="text-[#4ECDC4] hover:text-[#8BC34A] transition-colors"
                     >
-                      contacto@terapiaelfin.com
+                      lic.lilia.psicologa@gmail.com
                     </a>
                   </div>
                 </motion.div>
