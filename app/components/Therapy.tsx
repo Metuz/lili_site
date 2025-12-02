@@ -73,7 +73,7 @@ export default function Therapy() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ofresco acompañamiento terapéutico personalizado con enfoques especializados para diferentes necesidades
+            Ofrezco acompañamiento terapéutico personalizado con enfoque especializado para diferentes necesidades
             emocionales y relacionales.
           </p>
         </motion.div>

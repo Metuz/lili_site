@@ -91,7 +91,7 @@ export default function Footer() {
             </motion.div>
 
             <motion.p className="text-gray-300 text-lg leading-relaxed max-w-md">
-              Acompañamiento terapéutico profesional basado en el psicoanálisis para tu bienestar emocional. 8 años de
+              Acompañamiento terapéutico profesional basado en psicoanálisis para tu bienestar emocional. 8 años de 
               experiencia transformando vidas.
             </motion.p>
 
