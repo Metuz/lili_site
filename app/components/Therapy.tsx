@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import { FaUser, FaUsers, FaBrain, FaHeart } from "react-icons/fa"
+import Image from "next/image"
 
 export default function Therapy() {
   const therapies = [
@@ -47,7 +48,7 @@ export default function Therapy() {
   ]
 
   return (
-    <section id="therapy" className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="therapy" className="py-24 px-6 bg-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#4ECDC4] rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-[#8BC34A] rounded-full blur-3xl" />
@@ -147,19 +148,25 @@ export default function Therapy() {
           transition={{ delay: 0.8, ease: "easeOut" }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-[#4ECDC4]/10 to-[#8BC34A]/10 p-8 rounded-2xl border border-[#4ECDC4]/20">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Listo para comenzar tu proceso de sanación?</h3>
-            <p className="text-gray-600 mb-6 text-lg">
-              Agenda una consulta y descubre cómo podemos acompañarte en tu camino hacia el bienestar.
-            </p>
-            <motion.a
-              href="https://calendly.com/lic-lilia-psicologa/30min"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
-            >
-              Agenda tu consulta
-            </motion.a>
+          <div className="bg-gradient-to-r from-[#4ECDC4]/10 to-[#8BC34A]/10 p-8 rounded-2xl border border-[#4ECDC4]/20 relative overflow-hidden">
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Listo para comenzar tu proceso de sanación?</h3>
+              <p className="text-gray-600 mb-6 text-lg">
+                Agenda una consulta y descubre cómo podemos acompañarte en tu camino hacia el bienestar.
+              </p>
+              <motion.a
+                href="https://calendly.com/lic-lilia-psicologa/30min"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+              >
+                Agenda tu consulta
+              </motion.a>
+            </div>
+
+            <div className="absolute right-0 -bottom-8 hidden md:block">
+              <Image src="/rene02.png" alt="Brain characters" width={300} height={200} className="object-contain" />
+            </div>
           </div>
         </motion.div>
       </div>
