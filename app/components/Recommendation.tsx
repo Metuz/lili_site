@@ -88,7 +88,7 @@ export default function Recommendation() {
 
   if (loading) {
     return (
-      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-[#f8f5f2]">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-block bg-[#4ECDC4]/10 text-[#4ECDC4] px-4 py-2 rounded-full text-sm font-semibold mb-4">
             Testimonios
@@ -104,7 +104,7 @@ export default function Recommendation() {
   }
 
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-[#f8f5f2] relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#4ECDC4] rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-[#8BC34A] rounded-full blur-3xl" />
@@ -159,7 +159,7 @@ export default function Recommendation() {
                       damping: 10,
                       ease: "easeOut",
                     }}
-                    className="bg-white border-l-4 border-[#4ECDC4] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 max-w-2xl mx-auto"
+                    className="bg-[#f8f5f2] border-l-4 border-[#4ECDC4] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 max-w-2xl mx-auto"
                   >
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#4ECDC4] to-[#8BC34A] flex items-center justify-center text-white font-bold text-xl shadow-lg">
@@ -198,7 +198,7 @@ export default function Recommendation() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={goToPrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl hover:bg-[#4ECDC4] hover:text-white transition-all duration-300 group"
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#f8f5f2] rounded-full p-3 shadow-lg hover:shadow-xl hover:bg-[#4ECDC4] hover:text-white transition-all duration-300 group"
                 aria-label="Previous testimonial"
               >
                 <svg
@@ -215,7 +215,7 @@ export default function Recommendation() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={goToNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl hover:bg-[#4ECDC4] hover:text-white transition-all duration-300 group"
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#f8f5f2] rounded-full p-3 shadow-lg hover:shadow-xl hover:bg-[#4ECDC4] hover:text-white transition-all duration-300 group"
                 aria-label="Next testimonial"
               >
                 <svg

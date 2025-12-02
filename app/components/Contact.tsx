@@ -108,7 +108,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/10"
+            className="bg-[#f8f5f2]/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#4ECDC4]/10"
           >
             <AnimatePresence>
               {state?.success && (
@@ -135,7 +135,7 @@ export default function Contact() {
                   id="name"
                   required
                   onBlur={() => setTouched({ ...touched, name: true })}
-                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700"
+                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-[#f8f5f2] transition-all duration-300 text-gray-700"
                   placeholder="Tu nombre completo"
                 />
                 <AnimatePresence>
@@ -163,7 +163,7 @@ export default function Contact() {
                     id="email"
                     required
                     onBlur={() => setTouched({ ...touched, email: true })}
-                    className="w-full p-4 pl-12 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700"
+                    className="w-full p-4 pl-12 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-[#f8f5f2] transition-all duration-300 text-gray-700"
                     placeholder="tu.email@example.com"
                   />
                   <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#4ECDC4]" />
@@ -192,7 +192,7 @@ export default function Contact() {
                     name="phone"
                     id="phone"
                     onBlur={() => setTouched({ ...touched, phone: true })}
-                    className="w-full p-4 pl-12 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700"
+                    className="w-full p-4 pl-12 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-[#f8f5f2] transition-all duration-300 text-gray-700"
                     placeholder="+55 123 456 789"
                   />
                   <FaPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#4ECDC4]" />
@@ -221,7 +221,7 @@ export default function Contact() {
                   rows={5}
                   required
                   onBlur={() => setTouched({ ...touched, message: true })}
-                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-300 text-gray-700 resize-none"
+                  className="w-full p-4 rounded-xl bg-gray-50 border-2 border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-[#f8f5f2] transition-all duration-300 text-gray-700 resize-none"
                   placeholder="¿Cómo podemos ayudarte?"
                 ></textarea>
                 <AnimatePresence>
@@ -253,7 +253,7 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <motion.div
-                  className="flex items-start gap-4 p-4 bg-white/60 rounded-xl"
+                  className="flex items-start gap-4 p-4 bg-[#f8f5f2]/60 rounded-xl"
                   whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.8)" }}
                   transition={{ duration: 0.2 }}
                 >
@@ -272,7 +272,7 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-start gap-4 p-4 bg-white/60 rounded-xl"
+                  className="flex items-start gap-4 p-4 bg-[#f8f5f2]/60 rounded-xl"
                   whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.8)" }}
                   transition={{ duration: 0.2 }}
                 >
@@ -288,7 +288,7 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-start gap-4 p-4 bg-white/60 rounded-xl"
+                  className="flex items-start gap-4 p-4 bg-[#f8f5f2]/60 rounded-xl"
                   whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.8)" }}
                   transition={{ duration: 0.2 }}
                 >

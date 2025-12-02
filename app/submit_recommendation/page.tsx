@@ -52,7 +52,7 @@ export default function SubmitRecommendation() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-[#f8f5f2]/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <Link
             href="/"
@@ -89,7 +89,7 @@ export default function SubmitRecommendation() {
 
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] rounded-3xl opacity-10" />
-            <div className="relative bg-white rounded-3xl shadow-xl p-8 md:p-12">
+            <div className="relative bg-[#f8f5f2] rounded-3xl shadow-xl p-8 md:p-12">
               {submitStatus === "success" && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}

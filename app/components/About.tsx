@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 bg-white relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#f8f5f2] relative overflow-hidden">
       <div className="container mx-auto max-w-7xl relative z-10">
         <motion.div
           className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start"
@@ -40,7 +40,7 @@ export default function About() {
 
             {/* Profile card */}
             <motion.div
-              className="bg-white rounded-2xl shadow-lg p-6 w-64"
+              className="bg-[#f8f5f2] rounded-2xl shadow-lg p-6 w-64"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}

@@ -48,7 +48,7 @@ export default function Therapy() {
   ]
 
   return (
-    <section id="therapy" className="py-24 px-6 bg-white relative overflow-hidden">
+    <section id="therapy" className="py-24 px-6 bg-[#f8f5f2] relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#4ECDC4] rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-[#8BC34A] rounded-full blur-3xl" />
@@ -97,7 +97,7 @@ export default function Therapy() {
                 y: -8,
                 boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)",
               }}
-              className={`bg-white p-8 rounded-2xl shadow-lg border-l-4 ${therapy.borderColor} hover:shadow-2xl transition-all duration-300 group`}
+              className={`bg-[#f8f5f2] p-8 rounded-2xl shadow-lg border-l-4 ${therapy.borderColor} hover:shadow-2xl transition-all duration-300 group`}
             >
               <motion.div
                 whileHover={{ rotate: 15, scale: 1.1 }}
