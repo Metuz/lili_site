@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 
 interface Recommendation {
   id: string
@@ -51,7 +51,7 @@ export default function Recommendation() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % recommendations.length)
-    }, 5000)
+    }, 8000)
 
     return () => clearInterval(interval)
   }, [recommendations.length])
@@ -88,30 +88,50 @@ export default function Recommendation() {
 
   if (loading) {
     return (
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-[#f8f5f2]">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#8b7b7b] mb-12">Cargando testimonios...</h2>
+          <div className="inline-block bg-[#4ECDC4]/10 text-[#4ECDC4] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Testimonios
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Cargando testimonios...</h2>
         </div>
       </section>
     )
   }
 
   if (recommendations.length === 0) {
-    return (
-      <></>
-      // <section className="py-16 px-4 bg-white">
-      //   <div className="max-w-6xl mx-auto text-center">
-      //     <h2 className="text-3xl font-bold text-[#8b7b7b] mb-12">Testimonios de Nuestros Pacientes</h2>
-      //     <p className="text-[#8b7b7b]">No hay testimonios disponibles aún.</p>
-      //   </div>
-      // </section>
-    )
+    return <></>
   }
 
   return (
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-[#8b7b7b] mb-12">Testimonios de Nuestros Pacientes</h2>
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-[#f8f5f2] relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#4ECDC4] rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-[#8BC34A] rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block bg-[#4ECDC4]/10 text-[#4ECDC4] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Lo que dicen mis pacientes
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Testimonios de{" "}
+            <span className="text-[#4ECDC4] relative">
+              mis pacientes
+              <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] rounded-full" />
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Historias reales de transformación y bienestar emocional
+          </p>
+        </motion.div>
 
         <div className="relative">
           {/* Carousel Container */}
@@ -125,21 +145,34 @@ export default function Recommendation() {
               className="flex transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {recommendations.map((recommendation) => (
+              {recommendations.map((recommendation, index) => (
                 <div key={recommendation.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-white border-l-4 border-[#a8d5ba] rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-[#a8d5ba] flex items-center justify-center text-white font-semibold">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.1,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      ease: "easeOut",
+                    }}
+                    className="bg-[#f8f5f2] border-l-4 border-[#4ECDC4] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 max-w-2xl mx-auto"
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#4ECDC4] to-[#8BC34A] flex items-center justify-center text-white font-bold text-xl shadow-lg">
                         {recommendation.name.charAt(0)}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-[#8b7b7b]">{recommendation.name}</h3>
-                        <div className="flex gap-1">
+                        <h3 className="font-bold text-gray-900 text-lg">{recommendation.name}</h3>
+                        <div className="flex gap-1 mt-1">
                           {[...Array(5)].map((_, i) => (
                             <svg
                               key={i}
-                              className={`w-4 h-4 ${
-                                i < recommendation.rating ? "text-yellow-400 fill-current" : "text-gray-300"
+                              className={`w-5 h-5 ${
+                                i < recommendation.rating ? "text-[#8BC34A] fill-current" : "text-gray-300"
                               }`}
                               viewBox="0 0 20 20"
                             >
@@ -149,8 +182,10 @@ export default function Recommendation() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-[#8b7b7b] leading-relaxed">{recommendation.testimonial}</p>
-                  </div>
+                    <p className="text-gray-700 leading-relaxed text-lg italic">
+                      &ldquo;{recommendation.testimonial}&rdquo;
+                    </p>
+                  </motion.div>
                 </div>
               ))}
             </div>
@@ -159,37 +194,54 @@ export default function Recommendation() {
           {/* Navigation Buttons */}
           {recommendations.length > 1 && (
             <>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={goToPrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#f8f5f2] rounded-full p-3 shadow-lg hover:shadow-xl hover:bg-[#4ECDC4] hover:text-white transition-all duration-300 group"
                 aria-label="Previous testimonial"
               >
-                <svg className="w-6 h-6 text-[#8b7b7b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={goToNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#f8f5f2] rounded-full p-3 shadow-lg hover:shadow-xl hover:bg-[#4ECDC4] hover:text-white transition-all duration-300 group"
                 aria-label="Next testimonial"
               >
-                <svg className="w-6 h-6 text-[#8b7b7b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </motion.button>
             </>
           )}
 
           {/* Dots Indicator */}
           {recommendations.length > 1 && (
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="flex justify-center gap-2 mt-10">
               {recommendations.map((_, index) => (
-                <button
+                <motion.button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? "bg-[#a8d5ba] w-8" : "bg-gray-300"
+                  whileHover={{ scale: 1.2 }}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] w-10"
+                      : "bg-gray-300 w-2 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -197,6 +249,16 @@ export default function Recommendation() {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="relative mt-24">
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="h-px bg-gradient-to-r from-transparent via-[#4ECDC4]/30 to-transparent w-full"
+        />
       </div>
     </section>
   )

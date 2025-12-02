@@ -1,98 +1,82 @@
-// Updated Hero Component with Divider
-'use client';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+"use client"
+import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="absolute inset-0 bg-gradient-to-b from-[#98DDC4] to-[#B1E6B3] z-0"
-      />
-      
-      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="md:w-1/2 text-center md:text-left"
-          >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#8E7A73]"
-            >
-              Tu camino hacia <span className="whitespace-nowrap">el bienestar emocional</span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, ease: "easeOut" }}
-              className="text-xl md:text-2xl mb-8 text-[#3F3F46] max-w-lg mx-auto md:mx-0"
-            >
-              Acompañamiento terapéutico personalizado para tu crecimiento personal
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, ease: "easeOut" }}
-            >
-              <motion.a
-                href="https://calendly.com/lic-lilia-psicologa/30min"
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: '#8E7A73'
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-[#8E7A73] text-white font-bold py-3 px-8 rounded-full shadow-lg inline-block"
-              >
-                Agenda una cita
-              </motion.a>
-            </motion.div>
-          </motion.div>
+    <section
+      id="home"
+      className="relative overflow-hidden h-[95vh] sm:h-[95vh] md:h-[92vh] lg:h-[90vh] flex items-center"
+    >
+      {/* Background image */}
+      <div className="absolute inset-0 bg-[#7BC5BC]">
+        <Image src="/back.png" alt="Background" fill className="object-cover object-center" priority />
+      </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="md:w-1/2"
+      {/* First div: Text content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 relative z-10">
+        <div className="flex flex-col items-start justify-center text-left gap-6 max-w-3xl">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="relative w-full aspect-square max-w-[500px] mx-auto">
-              <Image
-                src="/love-yourself.png"
-                alt="Professional therapist in a calming environment"
-                fill
-                className="object-cover rounded-xl shadow-2xl border-4 border-white"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1, ease: "easeOut" }}
-                className="absolute -z-10 inset-0 bg-[#98DDC4] rounded-xl translate-x-6 translate-y-6"
-              />
-            </div>
-          </motion.div>
+            Aquí estás,
+            <br />y eso ya es un gran paso.
+          </motion.h1>
+
+          <motion.p
+            className="text-base sm:text-lg md:text-xl text-white/95 max-w-2xl leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            A veces la vida pesa, duele o simplemente confunde... y nadie debería atravesarla en soledad. Este es un
+            espacio seguro para pausar, respirar y reconstruirte a tu ritmo.
+          </motion.p>
         </div>
       </div>
 
-      {/* Divider */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="h-px bg-[#8E7A73]/20 w-full"
-      />
+      {/* Second div: Bottom elements container (logo + rene) */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        {/* Logo - centered - hidden on mobile, visible from md breakpoint */}
+        <motion.div
+          className="hidden md:block absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="relative w-40 h-20 sm:w-48 sm:h-24 md:w-56 md:h-28 lg:w-64 lg:h-32">
+            <Image
+              src="/logo2.svg"
+              alt="El Fin del Principio - Atención Psicológica"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </motion.div>
+
+        {/* Rene character - bottom right on desktop, centered on mobile */}
+        <motion.div
+          className="absolute -bottom-6 sm:-bottom-4 md:-bottom-2 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-12 xl:right-16"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem]">
+            <Image
+              src="/rene01.png"
+              alt="Brain heart character"
+              fill
+              className="object-contain"
+              style={{ filter: "drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4))" }}
+              priority
+            />
+          </div>
+        </motion.div>
+      </div>
     </section>
-  );
+  )
 }
