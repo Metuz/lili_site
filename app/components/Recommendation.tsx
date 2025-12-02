@@ -119,12 +119,12 @@ export default function Recommendation() {
           className="text-center mb-16"
         >
           <div className="inline-block bg-[#4ECDC4]/10 text-[#4ECDC4] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Lo que dicen nuestros pacientes
+            Lo que dicen mis pacientes
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Testimonios de{" "}
             <span className="text-[#4ECDC4] relative">
-              nuestros pacientes
+              mis pacientes
               <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] rounded-full" />
             </span>
           </h2>

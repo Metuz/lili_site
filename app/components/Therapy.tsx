@@ -66,14 +66,14 @@ export default function Therapy() {
             Servicios especializados
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nuestros servicios de{" "}
+            Mis servicios de{" "}
             <span className="text-[#4ECDC4] relative">
               terapia
               <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-[#4ECDC4] to-[#8BC34A] rounded-full" />
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ofrecemos acompañamiento terapéutico personalizado con enfoques especializados para diferentes necesidades
+            Ofresco acompañamiento terapéutico personalizado con enfoques especializados para diferentes necesidades
             emocionales y relacionales.
           </p>
         </motion.div>
@@ -152,7 +152,7 @@ export default function Therapy() {
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Listo para comenzar tu proceso de sanación?</h3>
               <p className="text-gray-600 mb-6 text-lg">
-                Agenda una consulta y descubre cómo podemos acompañarte en tu camino hacia el bienestar.
+                Agenda una consulta y descubre cómo puedo acompañarte en tu camino hacia el bienestar.
               </p>
               <motion.a
                 href="https://calendly.com/lic-lilia-psicologa/30min"

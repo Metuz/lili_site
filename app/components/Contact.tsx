@@ -90,7 +90,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Contáctanos
+            Contáctame
           </motion.h2>
           <motion.p
             className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed"
@@ -98,7 +98,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Estamos aquí para escucharte. Completa el formulario y nos pondremos en contacto contigo en un plazo máximo
+            Estoy aquí para escucharte. Completa el formulario y me pondré en contacto contigo en un plazo máximo
             de 24 horas.
           </motion.p>
         </motion.div>
