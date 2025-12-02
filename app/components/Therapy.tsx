@@ -148,7 +148,7 @@ export default function Therapy() {
           transition={{ delay: 0.8, ease: "easeOut" }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-[#4ECDC4]/10 to-[#8BC34A]/10 p-8 rounded-2xl border border-[#4ECDC4]/20 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#4ECDC4]/10 to-[#8BC34A]/10 p-8 pb-32 md:pb-20 rounded-2xl border border-[#4ECDC4]/20 relative overflow-visible md:overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Listo para comenzar tu proceso de sanación?</h3>
               <p className="text-gray-600 mb-6 text-lg">
@@ -164,8 +164,8 @@ export default function Therapy() {
               </motion.a>
             </div>
 
-            <div className="absolute right-0 -bottom-8 hidden md:block">
-              <Image src="/rene02.png" alt="Brain characters" width={300} height={200} className="object-contain" />
+            <div className="absolute left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-4 bottom-0 md:-bottom-8 w-40 h-40 md:w-56 md:h-56">
+              <Image src="/rene02.png" alt="Brain characters" fill className="object-contain" />
             </div>
           </div>
         </motion.div>

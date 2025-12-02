@@ -318,13 +318,13 @@ export default function Contact() {
             </motion.div>
           </motion.div>
 
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-0 -mb-20 hidden lg:block z-20">
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-0 -mb-20 z-20">
             <Image
               src="/rene03.png"
               alt="Rene character"
               width={200}
               height={200}
-              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-lg"
+              className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-lg"
             />
           </div>
         </div>
