@@ -26,10 +26,10 @@ export default function About() {
                 {/* Image container directly inside gradient border */}
                 <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
-                    src="/lili.png"
+                    src="/lili4.png"
                     alt="Lilia Aguilar - Psicoterapeuta"
                     fill
-                    className="object-cover grayscale"
+                    className="object-cover"
                     style={{ objectPosition: "center 20%" }}
                     sizes="(max-width: 640px) 90vw, 320px"
                     priority
