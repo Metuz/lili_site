@@ -5,6 +5,7 @@ import { useFormStatus } from "react-dom"
 import { useActionState } from "react"
 import { FaPaperPlane, FaCheckCircle, FaPhone, FaEnvelope, FaClock } from "react-icons/fa"
 import { sendEmail } from "../api/action"
+import Image from "next/image"
 
 const initialState = {
   success: "",
@@ -102,7 +103,7 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -316,6 +317,16 @@ export default function Contact() {
               <cite className="text-[#4ECDC4] font-semibold">— Winston Churchill</cite>
             </motion.div>
           </motion.div>
+
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-0 -mb-20 hidden lg:block z-20">
+            <Image
+              src="/rene03.png"
+              alt="Rene character"
+              width={200}
+              height={200}
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </motion.section>
