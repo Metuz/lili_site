@@ -1,5 +1,5 @@
 "use client"
-import { motion } from "framer-motion"
+import { motion, easeOut, easeInOut } from "framer-motion"
 import { FaFacebook, FaInstagram, FaRegCopyright, FaHeart } from "react-icons/fa"
 import { MdOutlineMail, MdPhone, MdLocationOn } from "react-icons/md"
 import Image from "next/image"
@@ -14,7 +14,7 @@ export default function Footer() {
       transition: {
         staggerChildren: 0.1,
         delayChildren: 0.3,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   }
@@ -28,7 +28,7 @@ export default function Footer() {
     hover: {
       y: -3,
       scale: 1.1,
-      transition: { type: "spring", stiffness: 300, ease: "easeOut" },
+      transition: { type: "spring", stiffness: 300, ease: easeOut },
     },
   }
 
@@ -193,7 +193,7 @@ export default function Footer() {
             <span>Hecho con</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+              transition={{ duration: 1, repeat: Infinity, ease: easeInOut }}
             >
               <FaHeart className="text-[#4ECDC4]" />
             </motion.div>
