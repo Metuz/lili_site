@@ -28,7 +28,7 @@ export default function Footer() {
     hover: {
       y: -3,
       scale: 1.1,
-      transition: { type: "spring", stiffness: 300 },
+      transition: { type: "spring" as const, stiffness: 300 },
     },
   }
 
