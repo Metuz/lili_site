@@ -109,7 +109,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                Mi nombre es Lilia Aguilar, psicoterapeuta psicoanalítica con 8 años de experiencia acompañando a
+                Mi nombre es Lilia Aguilar (Céd. Prof. 15203090), psicoterapeuta psicoanalítica con 8 años de experiencia acompañando a
                 personas en su proceso de sanación emocional.
               </motion.p>
 
