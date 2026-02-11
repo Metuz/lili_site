@@ -54,7 +54,7 @@ export default function Footer() {
   ]
 
   const legalLinks = [
-    { text: "Consentimiento", href: "/consentimiento.pdf" }
+    { text: "Aviso de Privacidad", href: "/Aviso_de_Privacidad_El_Fin_del_Principio_Institucional_2026.pdf" }
   ]
 
   return (
