@@ -53,6 +53,10 @@ export default function Footer() {
     { text: "Contacto", section: "contact" },
   ]
 
+  const legalLinks = [
+    { text: "Aviso de Privacidad", href: "/Aviso_de_Privacidad_El_Fin_del_Principio_Institucional_2026.pdf" }
+  ]
+
   return (
     <motion.footer
       initial="hidden"
@@ -166,6 +170,18 @@ export default function Footer() {
                   <a
                     href={`#${link.section}`}
                     className="block py-2 text-gray-300 hover:text-[#4ECDC4] transition-colors duration-300"
+                  >
+                    {link.text}
+                  </a>
+                </motion.li>
+              ))}
+              {legalLinks.map((link, index) => (
+                <motion.li key={`legal-${index}`} whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block py-2 text-gray-300 hover:text-[#8BC34A] transition-colors duration-300"
                   >
                     {link.text}
                   </a>

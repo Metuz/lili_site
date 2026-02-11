@@ -51,7 +51,7 @@ export default function Recommendation() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % recommendations.length)
-    }, 8000)
+    }, 20000)
 
     return () => clearInterval(interval)
   }, [recommendations.length])
